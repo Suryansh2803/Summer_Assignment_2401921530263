@@ -1,0 +1,7 @@
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        string temp=s+s;
+        return temp.find(s,1)!=s.size();
+    }
+};
