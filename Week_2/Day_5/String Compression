@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+        int n=chars.size();
+        string s="";
+        for(int i=0;i<n;i++){
+            int count=1;
+            char ch=chars[i];
+            while(i+1<n){
+                if(ch==chars[i+1]){
+                    count++;
+                    i++;
+                }
+                
+                else break;
+            }
+            if(count==1) s = s + ch;
+            else s = s + ch + to_string(count);
+        }
+
+        for(int i=0;i<s.size();i++){
+            chars[i]=s[i];
+        }
+        return s.size();
+    }
+};
